@@ -5,30 +5,18 @@
 
       <form class="row" @submit.prevent="enviarFormulario">
         <div class="col-6 mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
+          <label for="name" class="form-label">name</label>
           <input
-            v-model="persona.nombre"
-            type="nombre"
+            v-model="persona.name"
+            type="name"
             class="form-control"
-            :class="{ 'is-invalid': procesando && nombreInvalido }"
+            :class="{ 'is-invalid': procesando && nameInvalido }"
             @focus="resetEstado"
             @keypress="resetEstado"
           />
         </div>
 
-        <div class="col-6 mb-3">
-          <label for="apellido" class="form-label">Apellido</label>
-          <input
-            v-model="persona.apellido"
-            type="text"
-            class="form-control"
-            :class="{ 'is-invalid': procesando && apellidoInvalido }"
-            @focus="resetEstado"
-            @keypress="resetEstado"
-            />
-        </div>
-
-        <div class="col-12 mb-3 form-check">
+        <div class="col-6 mb-3 form-check">
           <label for="email" class="form-label">Email</label>
           <input
           v-model="persona.email"
@@ -68,8 +56,7 @@ export default {
         correcto: false,
         error: false,
         persona: {
-          nombre: '',
-          apellido: '',
+          name: '',
           email: '',
         },
       }
@@ -80,7 +67,7 @@ export default {
       this.procesando = true;
       this.resetEstado();
 
-      if (this.nombreInvalido || this.apellidoInvalido || this.emailInvalido) {
+      if (this.nameInvalido || this.emailInvalido) {
         this.error = true;
         return;
       }
@@ -91,9 +78,8 @@ export default {
       this.procesando = false;
 
       this.persona= {
-      nombre: '',
-      apellido: '',
-      email: '',
+        name: '',
+        email: '',
       }
 
     },
@@ -105,12 +91,10 @@ export default {
   },
 
   computed: {
-    nombreInvalido() {
-      return this.persona.nombre.length < 1;
+    nameInvalido() {
+      return this.persona.name.length < 1;
     },
-    apellidoInvalido() {
-      return this.persona.apellido.length < 1;
-    },
+
     emailInvalido() {
       return this.persona.email.length < 1;
     },
