@@ -1,10 +1,7 @@
 <template>
   <div class="">
-
     <!-- As a heading -->
     <router-view />
-
-
   </div>
 </template>
 

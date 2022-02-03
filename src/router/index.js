@@ -7,31 +7,25 @@ import Home from "@/views/Home.vue";
 
 
 const routes = [
-  { path: "/:pathMatch(.*)*",
-    name: "not-found",
-    component: NotFound
-  },
-  { path: "/",
-    name: "home",
-    component: Home,
-  },
-  {
-    path: "/tabla",
-    name: "tablaPersones",
-    component: Tabla,
-  },
+	{ path: "/:pathMatch(.*)*", name: "not-found", component: NotFound },
+	{ path: "/", name: "home", component: Home },
+	{
+		path: "/tabla",
+		name: "tablaPersones",
+		component: Tabla,
+	},
 
-  {
-    path: "/cards",
-    name: "cardPersones",
-    component: Card,
-  },
+	{
+		path: "/cards",
+		name: "cardPersones",
+		component: Card,
+	},
 
-  {
-    path: "/newPersona",
-    name: "addPersona",
-    component: Add,
-  },
+	{
+		path: "/newPersona",
+		name: "addPersona",
+		component: Add,
+	},
 ];
 
 const router = createRouter({

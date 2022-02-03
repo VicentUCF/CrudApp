@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script>
+  <script>
 import FormPersona from "@/components/FormPersona.vue";
 import NavBar from "@/components/NavBar.vue";
 
@@ -25,7 +25,9 @@ export default {
           {
             method: "POST",
             body: JSON.stringify(persona),
-            headers: { "Content-type": "application/json; charset=UTF-8" },
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
           }
         );
 
