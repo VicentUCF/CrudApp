@@ -11,15 +11,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="row" v-for="persona in personas" :key="persona.id">
+        <tr class="row table-secondary" v-for="persona in personas" :key="persona.id">
 
           <!-- Persona properties -->
           <td class="col-5" v-if="editando === persona.id">
             <input type="text" class="form-control" v-model="persona.name" />
           </td>
           <td v-else class="col-5">{{ persona.name }}</td>
-
-
           <td class="col-5" v-if="editando === persona.id">
             <input type="email" class="form-control" v-model="persona.email" />
           </td>
