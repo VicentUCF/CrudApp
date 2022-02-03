@@ -5,7 +5,6 @@ import Add from "@/views/AddPersona.vue";
 import NotFound from "@/views/404.vue";
 import Home from "@/views/Home.vue";
 
-
 const routes = [
 	{ path: "/:pathMatch(.*)*", name: "not-found", component: NotFound },
 	{ path: "/", name: "home", component: Home },
@@ -29,8 +28,8 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+	history: createWebHistory(),
+	routes,
 });
 
 export default router;
